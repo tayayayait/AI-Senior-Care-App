@@ -1,0 +1,182 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background / Surface — Soft Cloud */
+    --background: 220 14% 96%; /* #F4F5F7 */
+    --foreground: 216 38% 20%; /* #172B4D */
+
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 216 38% 20%; /* #172B4D */
+
+    --popover: 0 0% 100%; /* #FFFFFF */
+    --popover-foreground: 216 38% 20%; /* #172B4D */
+
+    /* Primary — Deep Trust Blue */
+    --primary: 214 100% 40%; /* #0052CC */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+
+    /* Secondary */
+    --secondary: 220 14% 96%; /* #F4F5F7 */
+    --secondary-foreground: 214 100% 40%; /* #0052CC */
+
+    /* Muted */
+    --muted: 231 11% 92%; /* #EBECF0 */
+    --muted-foreground: 215 12% 48%; /* #6B778C */
+
+    /* Accent — Sky Tint */
+    --accent: 215 100% 94%; /* #DEEBFF */
+    --accent-foreground: 214 100% 40%; /* #0052CC */
+
+    /* Destructive */
+    --destructive: 14 91% 46%; /* #DE350B */
+    --destructive-foreground: 0 0% 100%;
+
+    /* Emergency — Alert Red */
+    --emergency: 11 100% 60%; /* #FF5630 */
+    --emergency-foreground: 0 0% 100%;
+
+    /* Border / Input / Ring */
+    --border: 223 14% 90%; /* #DFE1E6 */
+    --input: 223 14% 90%; /* #DFE1E6 */
+    --ring: 214 100% 65%; /* #4C9AFF — Focus Blue */
+
+    /* Radius */
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-lg: 16px;
+
+    /* Semantic */
+    --info: 216 100% 50%; /* #0065FF */
+    --info-foreground: 0 0% 100%;
+    --success: 156 100% 26%; /* #00875A */
+    --success-foreground: 0 0% 100%;
+    --warning: 33 100% 56%; /* #FF991F */
+    --warning-foreground: 0 0% 100%;
+    --danger: 0 72% 51%; /* #DC2626 */
+    --danger-foreground: 0 0% 100%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 216 38% 20%;
+    --sidebar-primary: 214 100% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 100% 94%;
+    --sidebar-accent-foreground: 214 100% 40%;
+    --sidebar-border: 223 14% 90%;
+    --sidebar-ring: 214 100% 65%;
+
+    /* Shadows */
+    --shadow-1: 0 1px 3px rgba(23, 43, 77, 0.06);
+    --shadow-2: 0 6px 18px rgba(23, 43, 77, 0.1);
+    --shadow-3: 0 14px 34px rgba(23, 43, 77, 0.14);
+
+    /* Motion */
+    --duration-fast: 120ms;
+    --duration-base: 200ms;
+    --duration-slow: 300ms;
+    --duration-page: 300ms;
+  }
+
+  .dark {
+    /* Dark mode placeholder */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family:
+      "Pretendard Variable",
+      Pretendard,
+      "Apple SD Gothic Neo",
+      "Noto Sans KR",
+      -apple-system,
+      BlinkMacSystemFont,
+      system-ui,
+      Roboto,
+      sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Typography component scale (5060 targeted — DESIGN.md) */
+.type-display {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 38px;
+}
+.type-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+.type-headline {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+.type-callout {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 26px;
+}
+.type-body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+}
+.type-caption {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Typing indicator animation */
+@keyframes typing-dot {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
+
+.typing-dot {
+  animation: typing-dot 180ms ease-in-out infinite alternate;
+}
+.typing-dot:nth-child(2) {
+  animation-delay: 60ms;
+}
+.typing-dot:nth-child(3) {
+  animation-delay: 120ms;
+}
